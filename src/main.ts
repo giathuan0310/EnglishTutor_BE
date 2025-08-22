@@ -9,7 +9,10 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors({
-    origin: 'http://localhost:5173',
+   origin: [
+      'http://localhost:5173',                 // Dành cho môi trường dev local
+      'https://english-tutor-fe.vercel.app'  // Dành cho môi trường production
+    ],
     credentials: true,
   });
 
