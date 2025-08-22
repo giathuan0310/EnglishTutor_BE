@@ -10,12 +10,12 @@ export class BookingsController {
 
   @Post('trial')
   create(@Body() createBookingDto: CreateBookingDto, @Request() req) {
-  
+
     console.log('--- BÊN TRONG CONTROLLER ---');
     console.log('Object req.user được giải mã từ token:', req.user);
 
     const studentId = req.user._id;
-    console.log('ID của sinh viên được lấy ra:', studentId); 
+    console.log('ID của sinh viên được lấy ra:', studentId);
 
     return this.bookingsService.createTrial(createBookingDto, studentId);
   }
